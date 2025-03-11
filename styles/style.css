@@ -5,16 +5,30 @@ body {
 form {
     display: flex;
     flex-direction: column;
+    justify-self: center;
+    align-items: center;
+    row-gap: 15px;
+    background-color: #fff;
+    min-height: 350px;
+    min-width: 300px;
     border: 1px solid transparent;
     border-radius: 5px;
-    background-color: #fff;
+
+}
+
+.title {
+    font-size: 1.5em;
+    font-weight: 400;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: underline;
+    text-decoration-color: #3f70f4;
+    min-width: 80%;
 }
 
 .accept {
     display: flex;
-    align-items: center;
     gap: 10px;
-    margin-bottom: 20px;
+    min-width: 250px;
 }
 
 .personal_data {
@@ -23,4 +37,24 @@ form {
     margin: -1px;
     position: absolute;
     overflow: hidden;
+    min-height: 60px;
+
+}
+
+.personal_data-input {
+    min-width: 80%;
+    min-height: 40px;
+}
+
+.button {
+    color: #fff;
+    background-color: #3f70f4;
+    min-width: 80%;
+    min-height: 40px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+
+.link {
+    color: #3f70f4;
 }
