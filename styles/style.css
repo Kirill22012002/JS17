@@ -13,7 +13,6 @@ form {
     min-width: 300px;
     border: 1px solid transparent;
     border-radius: 5px;
-
 }
 
 .title {
@@ -38,7 +37,6 @@ form {
     position: absolute;
     overflow: hidden;
     min-height: 60px;
-
 }
 
 .personal_data-input {
