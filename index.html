@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,36 @@
     <link href="styles/style.css" rel="stylesheet">
     <title>Document</title>
 </head>
-<body>
-    <div>
-        Hello, World!
-    </div>
 
+<body>
+    <form>
+        <p class="title">Registration</p>
+        <label for="name" class="personal_data">Имя</label>
+        <input type="text" placeholder="Enter your name" id="name" />
+        <label for="email" class="personal_data">Почта</label>
+        <input type="email" placeholder="Enter your email" id="email" />
+        <label for="password" class="personal_data">Пароль</label>
+        <input type="password" placeholder="Create password" id="password" />
+        <label for="password" class="personal_data">Пароль</label>
+        <input type="password" placeholder="Confirm password" id="password" />
+
+        <input class="button" type="button" value="Register now">
+
+
+
+    </form>
+
+
+    <form>
+        <p class="title">Login</p>
+        <label for="email" class="personal_data">Почта</label>
+        <input type="email" placeholder="Enter your email" id="email" />
+        <label for="password" class="personal_data">Пароль</label>
+        <input type="password" placeholder="Password" id="password" />
+        <label class="accept"><input type="checkbox">Запомнить аккаунт</label>
+        <input class="button" type="button" value="Войти">
+    </form>
     <script src="scripts/script.js"></script>
 </body>
+
 </html>

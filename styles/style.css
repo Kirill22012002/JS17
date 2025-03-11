@@ -1,0 +1,26 @@
+body {
+    background-color: #3f70f4;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.accept {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.personal_data {
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    position: absolute;
+    overflow: hidden;
+}
