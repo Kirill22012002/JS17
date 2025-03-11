@@ -9,30 +9,25 @@
     <title>Document</title>
 </head>
 
-<body>
-    <form>
-        <p class="title">Registration</p>
-        <label for="name" class="personal_data">Имя</label>
-        <input class="personal_data-input" type="text" placeholder="Enter your name" id="name" />
-        <label for="email" class="personal_data">Почта</label>
-        <input class="personal_data-input" type="email" placeholder="Enter your email" id="email" />
-        <label for="password" class="personal_data">Пароль</label>
-        <input class="personal_data-input" type="password" placeholder="Create password" id="password" />
-        <label for="password" class="personal_data">Пароль</label>
-        <input class="personal_data-input" type="password" placeholder="Confirm password" id="password" />
+<body class="page">
+    <form class="form form_registration">
+        <p class="form_title">Registration</p>
+        <input class="personal_data-input" type="text" placeholder="Enter your name" />
+        <input class="personal_data-input" type="email" placeholder="Enter your email" />
+        <input class="personal_data-input" type="password" placeholder="Create password" />
+        <input class="personal_data-input" type="password" placeholder="Confirm password" />
         <label class="accept"><input type="checkbox">I accept all terms</label>
         <button class="button" type="submit">Register now</button>
-        <p class="">Already have an account? <a class="link">Login now</a></p>
+        <p>Already have an account? <a class="link link_to-login">Login now</a></p>
     </form>
-    <!-- <form>
-        <p class="title">Login</p>
-        <label for="email" class="personal_data">Почта</label>
-        <input type="email" placeholder="Enter your email" id="email" />
-        <label for="password" class="personal_data">Пароль</label>
-        <input type="password" placeholder="Password" id="password" />
-        <label class="accept"><input type="checkbox">Запомнить аккаунт</label>
-        <input class="button" type="button" value="Войти">
-    </form> -->
+    <form class="form form_login">
+        <p class="form_title">Login</p>
+        <input class="personal_data-input" type="email" placeholder="Enter your email" />
+        <input class="personal_data-input" type="password" placeholder="Enter your password" />
+        <label class="accept"><input type="checkbox">Remember account</label>
+        <button class="button" type="submit">Entry</button>
+        <p>Don't have an account? <a class="link link_to-registration">Register now</a></p>
+    </form>
     <script src="scripts/script.js"></script>
 </body>
 
