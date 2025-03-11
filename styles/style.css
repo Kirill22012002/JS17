@@ -1,5 +1,9 @@
 body {
+    height: 100vh;
     background-color: #3f70f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 form {
@@ -12,16 +16,16 @@ form {
     min-height: 350px;
     min-width: 300px;
     border: 1px solid transparent;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .title {
     font-size: 1.5em;
     font-weight: 400;
     font-family: Arial, Helvetica, sans-serif;
-    text-decoration: underline;
-    text-decoration-color: #3f70f4;
     min-width: 80%;
+    position: relative;
+    display: inline-block;
 }
 
 .accept {
@@ -42,6 +46,8 @@ form {
 .personal_data-input {
     min-width: 80%;
     min-height: 40px;
+    border: 1px solid grey;
+    border-radius: 5px;
 }
 
 .button {
