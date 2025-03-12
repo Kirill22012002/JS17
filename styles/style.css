@@ -1,13 +1,17 @@
-body {
+:root {
+    --main-color: #3f70f4;
+}
+
+.page {
     height: 100vh;
-    background-color: #3f70f4;
+    background-color: var(--main-color);
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 50px;
 }
 
-form {
+.form {
     display: flex;
     flex-direction: column;
     justify-self: center;
@@ -19,12 +23,16 @@ form {
     border-radius: 10px;
 }
 
-form, 
+.form_registration {
+    display: none;
+}
+
+.form,
 .button {
     border: 1px solid transparent;
 }
 
-.title {
+.form_title {
     font-size: 1.5em;
     font-weight: 400;
     font-family: Arial, Helvetica, sans-serif;
@@ -32,7 +40,7 @@ form,
     display: inline-block;
 }
 
-.title,
+.form_title,
 .personal_data-input,
 .button {
     min-width: 80%;
@@ -44,22 +52,13 @@ form,
     min-width: 250px;
 }
 
-.personal_data {
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    position: absolute;
-    overflow: hidden;
-    min-height: 60px;
-}
-
 .personal_data-input {
     border: 1px solid grey;
 }
 
 .button {
     color: #fff;
-    background-color: #3f70f4;
+    background-color: var(--main-color);
 }
 
 .personal_data-input,
@@ -74,11 +73,11 @@ form,
 }
 
 .link {
-    color: #3f70f4;
+    color: var(--main-color);
 }
 
 .link:hover {
     text-decoration: underline;
-    text-decoration-color: #3f70f4;
+    text-decoration-color: var(--main-color);
     cursor: pointer;
 }
