@@ -2,6 +2,42 @@
     --main-color: #3f70f4;
 }
 
+.sidebar {
+    background-color: #fff;
+    width: calc(100% / 6);
+    border-radius: 10px;
+}
+
+.sidebar_list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    list-style-type: none;
+}
+
+.sidebar_list-item {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 80%;
+    border-radius: 5px;
+}
+
+.sidebar_list-item:hover {
+    background-color: #B0C3F9;
+    color: #fff;
+}
+
+
+.sidebar_link {
+    text-decoration: none;
+    color: #53565A;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+
 .page {
     height: 100vh;
     background-color: var(--main-color);
@@ -23,7 +59,8 @@
     border-radius: 10px;
 }
 
-.form_registration {
+.form_registration,
+.form_login {
     display: none;
 }
 
@@ -53,7 +90,7 @@
 }
 
 .personal_data-input {
-    border: 1px solid grey;
+    border: 1px solid #868B8E;
 }
 
 .button {
