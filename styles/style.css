@@ -4,6 +4,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 50px;
 }
 
 form {
@@ -15,17 +16,26 @@ form {
     background-color: #fff;
     min-height: 350px;
     min-width: 300px;
-    border: 1px solid transparent;
     border-radius: 10px;
+}
+
+form, 
+.button {
+    border: 1px solid transparent;
 }
 
 .title {
     font-size: 1.5em;
     font-weight: 400;
     font-family: Arial, Helvetica, sans-serif;
-    min-width: 80%;
     position: relative;
     display: inline-block;
+}
+
+.title,
+.personal_data-input,
+.button {
+    min-width: 80%;
 }
 
 .accept {
@@ -44,21 +54,31 @@ form {
 }
 
 .personal_data-input {
-    min-width: 80%;
-    min-height: 40px;
     border: 1px solid grey;
-    border-radius: 5px;
 }
 
 .button {
     color: #fff;
     background-color: #3f70f4;
-    min-width: 80%;
-    min-height: 40px;
-    border: 1px solid transparent;
+}
+
+.personal_data-input,
+.button {
     border-radius: 5px;
+    min-height: 40px;
+}
+
+.button:hover {
+    background-color: #1F387A;
+    cursor: pointer;
 }
 
 .link {
     color: #3f70f4;
+}
+
+.link:hover {
+    text-decoration: underline;
+    text-decoration-color: #3f70f4;
+    cursor: pointer;
 }
