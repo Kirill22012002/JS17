@@ -1,11 +1,13 @@
 :root {
     --main-color: #3f70f4;
+    --text-border-color: #53565A;
 }
 
 .sidebar {
     background-color: #fff;
-    width: calc(100% / 6);
+    width: calc(100vh / 4);
     border-radius: 10px;
+    padding: 20px 0 20px 0;
 }
 
 .sidebar_list {
@@ -26,17 +28,17 @@
 .sidebar_list-item:hover {
     background-color: #B0C3F9;
     color: #fff;
+    border: 1px solid;
+    border-color: var(--main-color);
 }
-
 
 .sidebar_link {
     text-decoration: none;
-    color: #53565A;
+    color: var(--text-border-color);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.2em;
     font-weight: 400;
 }
-
 
 .page {
     height: 100vh;
@@ -90,7 +92,8 @@
 }
 
 .personal_data-input {
-    border: 1px solid #868B8E;
+    border: 1px solid;
+    border-color: var(--text-border-color);
 }
 
 .button {
