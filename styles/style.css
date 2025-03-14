@@ -27,9 +27,7 @@
 
 .sidebar_list-item:hover {
     background-color: #B0C3F9;
-    color: #fff;
-    border: 1px solid;
-    border-color: var(--main-color);
+    cursor: pointer;
 }
 
 .sidebar_link {
