@@ -1,56 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="styles/normalize.css" rel="stylesheet">
-    <link href="styles/style.css" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="styles/normalize.css" rel="stylesheet" />
+    <link href="styles/style.css" rel="stylesheet" />
     <title>JS17</title>
-    <link rel="icon" type="image/x-icon" href="images/icons/favicon.ico">
-</head>
+    <link rel="icon" type="image/x-icon" href="images/icons/favicon.ico" />
+  </head>
 
-<body class="page">
+  <body class="page">
+    <div class="popup">Health check</div>
     <aside class="sidebar">
-        <ul class="sidebar_list">
-            <li class="sidebar_list-item">
-                <img src="images/icons/profile.svg">
-                <a class="sidebar_link" href="#">My Profile</a>
-            </li>
-            <li class="sidebar_list-item">
-                <img src="images/icons/friends.svg">
-                <a class="sidebar_link" href="#">My Friends</a>
-            </li>
-            <li class="sidebar_list-item">
-                <img src="images/icons/chats.svg">
-                <a class="sidebar_link" href="#">Chat</a>
-            </li>
-            <li class="sidebar_list-item">
-                <img src="images/icons/settings.svg">
-                <a class="sidebar_link" href="#">Settings</a>
-            </li>
-        </ul>
+      <ul class="sidebar_list">
+        <li class="sidebar_list-item">
+          <img src="images/icons/profile.svg" />
+          <a class="sidebar_link" href="#">My Profile</a>
+        </li>
+        <li class="sidebar_list-item">
+          <img src="images/icons/friends.svg" />
+          <a class="sidebar_link" href="#">My Friends</a>
+        </li>
+        <li class="sidebar_list-item">
+          <img src="images/icons/chats.svg" />
+          <a class="sidebar_link" href="#">Chat</a>
+        </li>
+        <li class="sidebar_list-item">
+          <img src="images/icons/settings.svg" />
+          <a class="sidebar_link" href="#">Settings</a>
+        </li>
+      </ul>
     </aside>
 
     <form class="form form_registration">
-        <p class="form_title">Registration</p>
-        <input class="personal_data-input" type="text" placeholder="Enter your name" />
-        <input class="personal_data-input" type="email" placeholder="Enter your email" />
-        <input class="personal_data-input" type="password" placeholder="Create password" />
-        <input class="personal_data-input" type="password" placeholder="Confirm password" />
-        <label class="accept"><input type="checkbox">I accept all terms</label>
-        <button class="button" type="submit">Register now</button>
-        <p>Already have an account? <a class="link link_to-login">Login now</a></p>
+      <p class="form_title">Registration</p>
+      <input
+        class="personal_data-input"
+        type="text"
+        placeholder="Enter your name"
+      />
+      <input
+        class="personal_data-input"
+        type="email"
+        placeholder="Enter your email"
+      />
+      <input
+        class="personal_data-input"
+        type="password"
+        placeholder="Create password"
+      />
+      <input
+        class="personal_data-input"
+        type="password"
+        placeholder="Confirm password"
+      />
+      <label class="accept"><input type="checkbox" />I accept all terms</label>
+      <button class="button" type="submit">Register now</button>
+      <p>
+        Already have an account? <a class="link link_to-login">Login now</a>
+      </p>
     </form>
     <form class="form form_login">
-        <p class="form_title">Login</p>
-        <input class="personal_data-input" type="email" placeholder="Enter your email" />
-        <input class="personal_data-input" type="password" placeholder="Enter your password" />
-        <label class="accept"><input type="checkbox">Remember account</label>
-        <button class="button" type="submit">Entry</button>
-        <p>Don't have an account? <a class="link link_to-registration">Register now</a></p>
+      <p class="form_title">Login</p>
+      <input
+        class="personal_data-input"
+        type="email"
+        placeholder="Enter your email"
+      />
+      <input
+        class="personal_data-input"
+        type="password"
+        placeholder="Enter your password"
+      />
+      <label class="accept"><input type="checkbox" />Remember account</label>
+      <button class="button" type="submit">Entry</button>
+      <p>
+        Don't have an account?
+        <a class="link link_to-registration">Register now</a>
+      </p>
     </form>
     <script src="scripts/script.js"></script>
-</body>
-
+  </body>
 </html>
