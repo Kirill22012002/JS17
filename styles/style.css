@@ -6,8 +6,8 @@
 .profile {
     background-color: #fff;
     border-radius: 10px;
-    width: 100vh;
-    height: calc(100vh / 1.5);
+    width: 820px;
+    min-height: 550px;
     display: flex;
     flex-direction: row;
     gap: 40px;
@@ -20,16 +20,12 @@
     margin-left: 20px;
 }
 
-.profile_photo {
+.profile_inf-photo {
     width: 300px;
     height: 300px;
     background-color: #fff;
     border-radius: 50%;
     margin: 20px 0 20px 0;
-}
-
-.profile_inf {
-    margin: 0;
 }
 
 .profile_inf,
@@ -40,7 +36,7 @@
     font-weight: 400;
 }
 
-.profile_edit {
+.profile_inf-edit {
     width: 300px;
     height: 40px;
     padding: 0;
@@ -54,7 +50,7 @@
     margin-bottom: 10px;
 }
 
-.profile_friends {
+.profile_inf-friends-count {
     display: flex;
     flex-direction: row;
     color: var(--text-border-color);
@@ -83,16 +79,17 @@
     border-color: var(--text-border-color);
     border-radius: 5px;
     padding: 10px;
+    min-width: 420px;
 }
 
-.profile_posts-heading {
+.profile_post-title {
     font-family: Arial, Helvetica, sans-serif;
     color: var(--text-border-color);
     font-size: 1.2em;
     font-weight: 400;
 }
 
-.profile_posts-text {
+.profile_post-text {
     font-family: Arial, Helvetica, sans-serif;
     color: var(--text-border-color);
 }
