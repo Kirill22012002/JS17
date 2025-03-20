@@ -34,10 +34,20 @@ fetch("http://192.168.100.39:5117/api/Ping/PingServer")
 
 function serverAvailablePopup() {
   const popup = document.querySelector(".popup");
-  popup.style.backgroundColor = "#59981A";
+  popup.classList.add("popup-active");
+  popup.querySelector(".text").textContent = "Server available";
+  popup.style.backgroundColor = "#C1D9B7";
+  setTimeout(() => {
+    popup.classList.remove("popup-active");
+  }, 4000);
 }
 
 function serverNotAvailablePopup() {
   const popup = document.querySelector(".popup");
-  popup.style.backgroundColor = "#F51720";
+  popup.classList.add("popup-active");
+  popup.querySelector(".text").textContent = "Server not available";
+  popup.style.backgroundColor = "#E5A298";
+  setTimeout(() => {
+    popup.classList.remove("popup-active");
+  }, 4000);
 }
