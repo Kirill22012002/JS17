@@ -1,6 +1,16 @@
 :root {
     --main-color: #3f70f4;
     --text-border-color: #53565A;
+    --font-family: Arial, Helvetica, sans-serif;
+}
+
+.popup {
+    width: 300px;
+    height: 150px;
+    border-radius: 10px;
+    display: none;
+    font-family: var(--font-family);
+    color: var(--text-border-color);
 }
 
 .profile {
@@ -125,7 +135,7 @@
 .sidebar_link {
     text-decoration: none;
     color: var(--text-border-color);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--font-family);
     font-size: 1.2em;
     font-weight: 400;
 }
@@ -137,6 +147,7 @@
     justify-content: center;
     align-items: center;
     gap: 50px;
+    flex-direction: column;
 }
 
 .form {
@@ -149,6 +160,7 @@
     min-height: 350px;
     min-width: 300px;
     border-radius: 10px;
+    margin-top: 50vh;
 }
 
 .form_registration,
@@ -164,7 +176,7 @@
 .form_title {
     font-size: 1.5em;
     font-weight: 400;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--font-family);
     position: relative;
     display: inline-block;
 }
@@ -210,4 +222,10 @@
     text-decoration: underline;
     text-decoration-color: var(--main-color);
     cursor: pointer;
+}
+
+.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
