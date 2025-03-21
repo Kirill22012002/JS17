@@ -31,19 +31,19 @@ ping(
 );
 
 function ping(url, successMessage = "success", errorMessage = "error") {
-  const successMessageColor = "#6EC531";
-  const errorMessageColor = "#FF3333";
+  const successColor = "#6EC531";
+  const errorColor = "#FF3333";
 
   fetch(url)
     .then((response) => {
       if (response.ok) {
-        showMessage(successMessage, successMessageColor);
+        showMessage(successMessage, successColor);
       } else {
-        showMessage(errorMessage, errorMessageColor);
+        showMessage(errorMessage, errorColor);
       }
     })
     .catch((err) => {
-      showMessage(errorMessage, errorMessageColor);
+      showMessage(errorMessage, errorColor);
       console.log(err);
     });
 }
