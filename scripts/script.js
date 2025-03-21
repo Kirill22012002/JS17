@@ -51,3 +51,36 @@ function serverNotAvailablePopup() {
     popup.classList.remove("active");
   }, 4000);
 }
+
+fetch("http://192.168.100.39:5117/api/Ping/PingSqlServer")
+  .then((response) => {
+    if (response.ok) {
+      serverAvailablePopupDataBase();
+    } else {
+      serverNotAvailablePopupDataBase();
+    }
+  })
+  .catch((err) => {
+    serverNotAvailablePopupDataBase();
+    console.log(err);
+  });
+
+function serverAvailablePopupDataBase() {
+  const popup = document.querySelector(".popup_data-base");
+  popup.classList.add("active");
+  popup.querySelector(".text").textContent = "DataBase available";
+  popup.style.backgroundColor = "#6EC531";
+  setTimeout(() => {
+    popup.classList.remove("active");
+  }, 4000);
+}
+
+function serverNotAvailablePopupDataBase() {
+  const popup = document.querySelector(".popup_data-base");
+  popup.classList.add("active");
+  popup.querySelector(".text").textContent = "DataBase not available";
+  popup.style.backgroundColor = "#ff3333";
+  setTimeout(() => {
+    popup.classList.remove("active");
+  }, 4000);
+}

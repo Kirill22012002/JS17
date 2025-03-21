@@ -4,7 +4,19 @@
     --font-family: Arial, Helvetica, sans-serif;
 }
 
-.popup {
+.page {
+    height: 100vh;
+    background-color: var(--main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-direction: column;
+    position: relative;
+}
+
+.popup,
+.popup_data-base {
     width: 200px;
     height: 80px;
     border-radius: 10px;
@@ -12,8 +24,15 @@
     font-family: var(--font-family);
     color: var(--text-border-color);
     position: absolute;
-    top: 20px;
     right: 20px;
+}
+
+.popup {
+    top: 20px;
+}
+
+.popup_data-base {
+    top: 120px;
 }
 
 .profile {
@@ -141,17 +160,6 @@
     font-family: var(--font-family);
     font-size: 1.2em;
     font-weight: 400;
-}
-
-.page {
-    height: 100vh;
-    background-color: var(--main-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    flex-direction: column;
-    position: relative;
 }
 
 .form {
