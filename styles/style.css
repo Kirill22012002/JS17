@@ -4,16 +4,34 @@
     --font-family: Arial, Helvetica, sans-serif;
 }
 
-.popup {
-    width: 200px;
-    height: 80px;
-    border-radius: 10px;
-    display: none;
+.page {
+    height: 100vh;
+    background-color: var(--main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-direction: column;
+    position: relative;
+}
+
+.popup-container {
+    display: flex;
     font-family: var(--font-family);
     color: var(--text-border-color);
     position: absolute;
-    top: 20px;
     right: 20px;
+    top: 20px;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.popup {
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .profile {
@@ -143,17 +161,6 @@
     font-weight: 400;
 }
 
-.page {
-    height: 100vh;
-    background-color: var(--main-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    flex-direction: column;
-    position: relative;
-}
-
 .form {
     display: flex;
     flex-direction: column;
@@ -226,10 +233,4 @@
     text-decoration: underline;
     text-decoration-color: var(--main-color);
     cursor: pointer;
-}
-
-.active {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }

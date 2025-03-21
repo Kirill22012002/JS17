@@ -19,35 +19,46 @@ function toogleActive(hide, active) {
   }, 150);
 }
 
-fetch("http://192.168.100.39:5117/api/Ping/PingServer")
-  .then((response) => {
-    if (response.ok) {
-      serverAvailablePopup();
-    } else {
-      serverNotAvailablePopup();
-    }
-  })
-  .catch((err) => {
-    serverNotAvailablePopup();
-    console.log(err);
-  });
+ping(
+  "http://192.168.100.39:5117/api/Ping/PingServer",
+  "Server available",
+  "Server not available"
+);
+ping(
+  "http://192.168.100.39:5117/api/Ping/PingSqlServer",
+  "DataBase available",
+  "DataBase not available"
+);
 
-function serverAvailablePopup() {
-  const popup = document.querySelector(".popup");
-  popup.classList.add("active");
-  popup.querySelector(".text").textContent = "Server available";
-  popup.style.backgroundColor = "#6EC531";
-  setTimeout(() => {
-    popup.classList.remove("active");
-  }, 4000);
+function ping(url, successMessage = "success", errorMessage = "error") {
+  const successMessageColor = "#6EC531";
+  const errorMessageColor = "#FF3333";
+
+  fetch(url)
+    .then((response) => {
+      if (response.ok) {
+        showMessage(successMessage, successMessageColor);
+      } else {
+        showMessage(errorMessage, errorMessageColor);
+      }
+    })
+    .catch((err) => {
+      showMessage(errorMessage, errorMessageColor);
+      console.log(err);
+    });
 }
 
-function serverNotAvailablePopup() {
-  const popup = document.querySelector(".popup");
-  popup.classList.add("active");
-  popup.querySelector(".text").textContent = "Server not available";
-  popup.style.backgroundColor = "#ff3333";
+function showMessage(message, color) {
+  const clonedTemplate = document.querySelector("#popup").cloneNode(true);
+  const popup = clonedTemplate.content;
+
+  popup.querySelector(".text").textContent = message;
+  popup.querySelector(".popup").style.backgroundColor = color;
+
+  const popupContainer = document.querySelector(".popup-container");
+  popupContainer.append(popup);
+
   setTimeout(() => {
-    popup.classList.remove("active");
+    popupContainer.remove(popup);
   }, 4000);
 }
