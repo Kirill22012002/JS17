@@ -8,9 +8,7 @@
     width: 300px;
     height: 150px;
     border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: none;
     font-family: var(--font-family);
     color: var(--text-border-color);
 }
@@ -20,6 +18,7 @@
     width: calc(100vh / 4);
     border-radius: 10px;
     padding: 20px 0 20px 0;
+    display: none;
 }
 
 .sidebar_list {
@@ -132,4 +131,10 @@
     text-decoration: underline;
     text-decoration-color: var(--main-color);
     cursor: pointer;
+}
+
+.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

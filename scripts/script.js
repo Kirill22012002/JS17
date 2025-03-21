@@ -5,17 +5,17 @@ const linkToLogin = formRegistration.querySelector(".link_to-login");
 const linkToRegistration = formLogin.querySelector(".link_to-registration");
 
 linkToLogin.addEventListener("click", () => {
-  toogleActiveF(formRegistration, formLogin);
+  toogleActive(formRegistration, formLogin);
 });
 
 linkToRegistration.addEventListener("click", () => {
-  toogleActiveF(formLogin, formRegistration);
+  toogleActive(formLogin, formRegistration);
 });
 
-function toogleActiveF(hide, active) {
-  hide.style.display = "none";
+function toogleActive(hide, active) {
+  hide.classList.remove(active);
   setTimeout(() => {
-    active.style.display = "flex";
+    active.classList.add(active);
   }, 150);
 }
 
@@ -34,20 +34,20 @@ fetch("http://192.168.100.39:5117/api/Ping/PingServer")
 
 function serverAvailablePopup() {
   const popup = document.querySelector(".popup");
-  popup.classList.add("popup-active");
+  popup.classList.add("active");
   popup.querySelector(".text").textContent = "Server available";
-  popup.style.backgroundColor = "#C1D9B7";
+  popup.style.backgroundColor = "#6EC531";
   setTimeout(() => {
-    popup.classList.remove("popup-active");
+    popup.classList.remove("active");
   }, 4000);
 }
 
 function serverNotAvailablePopup() {
   const popup = document.querySelector(".popup");
-  popup.classList.add("popup-active");
+  popup.classList.add("active");
   popup.querySelector(".text").textContent = "Server not available";
-  popup.style.backgroundColor = "#E5A298";
+  popup.style.backgroundColor = "#ff3333";
   setTimeout(() => {
-    popup.classList.remove("popup-active");
+    popup.classList.remove("active");
   }, 4000);
 }
