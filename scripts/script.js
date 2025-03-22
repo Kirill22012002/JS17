@@ -20,27 +20,30 @@ function toogleActive(hide, active) {
 }
 
 ping(
-  `http://192.168.100.39:5117/api/Ping/PingServer`,
+  "http://192.168.100.39:5117/api/Ping/PingServer",
   "Server available",
   "Server not available"
 );
 ping(
-  `http://192.168.100.39:5117/api/Ping/PingSqlServer`,
+  "http://192.168.100.39:5117/api/Ping/PingSqlServer",
   "DataBase available",
   "DataBase not available"
 );
 
 function ping(url, successMessage = "success", errorMessage = "error") {
+  const successMessageColor = "#6EC531";
+  const errorMessageColor = "#FF3333";
+
   fetch(url)
     .then((response) => {
       if (response.ok) {
-        showMessage(successMessage, "#6EC531");
+        showMessage(successMessage, successMessageColor);
       } else {
-        showMessage(errorMessage, "#ff3333");
+        showMessage(errorMessage, errorMessageColor);
       }
     })
     .catch((err) => {
-      showMessage(errorMessage, "#ff3333");
+      showMessage(errorMessage, errorMessageColor);
       console.log(err);
     });
 }
