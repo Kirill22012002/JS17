@@ -15,24 +15,24 @@
     position: relative;
 }
 
-.popup,
-.popup_data-base {
-    width: 200px;
-    height: 80px;
-    border-radius: 10px;
-    display: none;
+.popup-container {
+    /* display: none; */
+    display: flex;
     font-family: var(--font-family);
     color: var(--text-border-color);
     position: absolute;
     right: 20px;
+    top: 20px;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .popup {
-    top: 20px;
-}
-
-.popup_data-base {
-    top: 120px;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .profile {
@@ -236,8 +236,9 @@
     cursor: pointer;
 }
 
+/* 
 .active {
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */

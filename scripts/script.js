@@ -19,68 +19,43 @@ function toogleActive(hide, active) {
   }, 150);
 }
 
-fetch("http://192.168.100.39:5117/api/Ping/PingServer")
-  .then((response) => {
-    if (response.ok) {
-      serverAvailablePopup();
-    } else {
-      serverNotAvailablePopup();
-    }
-  })
-  .catch((err) => {
-    serverNotAvailablePopup();
-    console.log(err);
-  });
+ping(
+  `http://192.168.100.39:5117/api/Ping/PingServer`,
+  "Server available",
+  "Server not available"
+);
+ping(
+  `http://192.168.100.39:5117/api/Ping/PingSqlServer`,
+  "DataBase available",
+  "DataBase not available"
+);
 
-function serverAvailablePopup() {
-  const popup = document.querySelector(".popup");
-  popup.classList.add("active");
-  popup.querySelector(".text").textContent = "Server available";
-  popup.style.backgroundColor = "#6EC531";
-  setTimeout(() => {
-    popup.classList.remove("active");
-  }, 4000);
+function ping(url, successMessage = "success", errorMessage = "error") {
+  fetch(url)
+    .then((response) => {
+      if (response.ok) {
+        showMessage(successMessage, "#6EC531");
+      } else {
+        showMessage(errorMessage, "#ff3333");
+      }
+    })
+    .catch((err) => {
+      showMessage(errorMessage, "#ff3333");
+      console.log(err);
+    });
 }
 
-function serverNotAvailablePopup() {
-  const popup = document.querySelector(".popup");
-  popup.classList.add("active");
-  popup.querySelector(".text").textContent = "Server not available";
-  popup.style.backgroundColor = "#ff3333";
-  setTimeout(() => {
-    popup.classList.remove("active");
-  }, 4000);
-}
+function showMessage(message, color) {
+  const clonedTemplate = document.querySelector("#popup").cloneNode(true);
+  const popup = clonedTemplate.content;
 
-fetch("http://192.168.100.39:5117/api/Ping/PingSqlServer")
-  .then((response) => {
-    if (response.ok) {
-      serverAvailablePopupDataBase();
-    } else {
-      serverNotAvailablePopupDataBase();
-    }
-  })
-  .catch((err) => {
-    serverNotAvailablePopupDataBase();
-    console.log(err);
-  });
+  popup.querySelector(".text").textContent = message;
+  popup.querySelector(".popup").style.backgroundColor = color;
 
-function serverAvailablePopupDataBase() {
-  const popup = document.querySelector(".popup_data-base");
-  popup.classList.add("active");
-  popup.querySelector(".text").textContent = "DataBase available";
-  popup.style.backgroundColor = "#6EC531";
-  setTimeout(() => {
-    popup.classList.remove("active");
-  }, 4000);
-}
+  const popupContainer = document.querySelector(".popup-container");
+  popupContainer.append(popup);
 
-function serverNotAvailablePopupDataBase() {
-  const popup = document.querySelector(".popup_data-base");
-  popup.classList.add("active");
-  popup.querySelector(".text").textContent = "DataBase not available";
-  popup.style.backgroundColor = "#ff3333";
   setTimeout(() => {
-    popup.classList.remove("active");
+    popupContainer.remove(popup);
   }, 4000);
 }
