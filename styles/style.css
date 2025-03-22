@@ -23,7 +23,7 @@
     right: 20px;
     top: 20px;
     flex-direction: column;
-    gap: 20px;
+    gap: 7px;
 }
 
 .popup {
@@ -63,7 +63,7 @@
 .profile_posts-title {
     color: var(--text-border-color);
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-weight: 400;
 }
 
