@@ -245,7 +245,7 @@
     .profile {
         flex-direction: column;
         width: 370px;
-        gap: 20px;
+        gap: 10px;
     }
 
     .profile_information {
@@ -254,5 +254,10 @@
 
     .profile_posts-title {
         margin-right: 20px;
+        margin-top: 10px;
+    }
+
+    .profile_posts-section {
+        margin-left: 20px;
     }
 }
