@@ -2,6 +2,7 @@
 
 ## Deploy from `production` branch
 on this site: https://app.netlify.com/
+email: perepechkin.kirill@gmail.com
 
 
 LINKS:
