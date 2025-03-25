@@ -23,7 +23,7 @@
     right: 20px;
     top: 20px;
     flex-direction: column;
-    gap: 20px;
+    gap: 7px;
 }
 
 .popup {
@@ -37,8 +37,7 @@
 .profile {
     background-color: #fff;
     border-radius: 10px;
-    width: 820px;
-    min-height: 550px;
+    width: 840px;
     display: flex;
     flex-direction: row;
     gap: 40px;
@@ -57,14 +56,16 @@
     background-color: #fff;
     border-radius: 50%;
     margin: 20px 0 20px 0;
+    border: #3f70f4 1px solid;
+    border-radius: 50%;
 }
 
 .profile_inf,
 .profile_posts-title {
-    color: var(--text-border-color);
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.5em;
     font-weight: 400;
+    color: #000;
+    font-size: 1.2em;
 }
 
 .profile_inf-edit {
@@ -81,13 +82,19 @@
     margin-bottom: 10px;
 }
 
+.profile_inf-edit:hover {
+    background-color: #1F387A;
+    cursor: pointer;
+}
+
 .profile_inf-friends-count {
     display: flex;
     flex-direction: row;
     color: var(--text-border-color);
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.2em;
     font-weight: 400;
+    gap: 7px;
+    margin-bottom: 20px;
 }
 
 .profile_posts-section {
@@ -107,15 +114,14 @@
     flex-direction: column;
     gap: 20px;
     border: 1px solid;
-    border-color: var(--text-border-color);
+    border-color: var(--main-color);
     border-radius: 5px;
     padding: 10px;
-    min-width: 420px;
 }
 
 .profile_post-title {
     font-family: Arial, Helvetica, sans-serif;
-    color: var(--text-border-color);
+    color: #000;
     font-size: 1.2em;
     font-weight: 400;
 }
@@ -233,4 +239,25 @@
     text-decoration: underline;
     text-decoration-color: var(--main-color);
     cursor: pointer;
+}
+
+@media (width: 390px) {
+    .profile {
+        flex-direction: column;
+        width: 370px;
+        gap: 10px;
+    }
+
+    .profile_information {
+        margin-left: 34px;
+    }
+
+    .profile_posts-title {
+        margin-right: 20px;
+        margin-top: 10px;
+    }
+
+    .profile_posts-section {
+        margin-left: 20px;
+    }
 }
