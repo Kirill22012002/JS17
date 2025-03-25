@@ -39,7 +39,8 @@
     border-radius: 10px;
     width: 820px;
     min-height: 550px;
-    display: flex;
+    /* display: flex; */
+    display: none;
     flex-direction: row;
     gap: 40px;
 }
@@ -171,10 +172,11 @@
     min-height: 350px;
     min-width: 300px;
     border-radius: 10px;
-    margin-top: 50vh;
+    padding: 10px 0 10px 0;
+    /* margin-top: 50vh; */
 }
 
-.form_registration,
+/* .form_registration, */
 .form_login {
     display: none;
 }

@@ -62,3 +62,26 @@ function showMessage(message, color) {
     popupContainer.remove(popup);
   }, 4000);
 }
+
+function handleFormSubmit(event) {
+  event.preventDefault();
+  objectTransformation(applicantForm);
+}
+
+const applicantForm = document.querySelector(".form_registration");
+applicantForm.addEventListener("submit", handleFormSubmit);
+
+function objectTransformation(formNode) {
+  const { elements } = formNode;
+
+  const data = Array.from(elements)
+    .filter((item) => !!item.name)
+    .map((element) => {
+      const { name, type } = element;
+      const value = type === "checkbox" ? element.checked : element.value;
+
+      return { name, value };
+    });
+
+  console.log(data);
+}
