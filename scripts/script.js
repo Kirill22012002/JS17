@@ -63,13 +63,15 @@ function showMessage(message, color) {
   }, 4000);
 }
 
-function handleFormSubmit(event) {
-  event.preventDefault();
-  objectTransformation(applicantForm);
-}
-
 const applicantForm = document.querySelector(".form_registration");
 applicantForm.addEventListener("submit", handleFormSubmit);
+
+function handleFormSubmit(event) {
+  event.preventDefault();
+  const formData = objectTransformation(applicantForm);
+  fetch('http://192.168.100.39:5117/api/User/Register?name=&email=&password=');
+  console.log(formData);
+}
 
 function objectTransformation(formNode) {
   const { elements } = formNode;
@@ -84,4 +86,5 @@ function objectTransformation(formNode) {
     });
 
   console.log(data);
+  return data;
 }
