@@ -1,3 +1,5 @@
+const BASE_URL = "http://192.168.100.42:5117";
+
 const formRegistration = document.querySelector(".form_registration");
 const formLogin = document.querySelector(".form_login");
 
@@ -13,19 +15,19 @@ linkToRegistration.addEventListener("click", () => {
 });
 
 function toogleActive(hide, active) {
-  hide.classList.remove(active);
+  hide.classList.remove("active");
   setTimeout(() => {
-    active.classList.add(active);
+    active.classList.add("active");
   }, 150);
 }
 
 ping(
-  "http://192.168.100.39:5117/api/Ping/PingServer",
+  `${BASE_URL}/api/Ping/PingServer`,
   "Server available",
   "Server not available"
 );
 ping(
-  "http://192.168.100.39:5117/api/Ping/PingSqlServer",
+  `${BASE_URL}/api/Ping/PingSqlServer`,
   "DataBase available",
   "DataBase not available"
 );
@@ -78,7 +80,15 @@ function handleFormSubmit(event) {
   console.log(emailValue);
   console.log(passwordValue);
 
-  // fetch('http://192.168.100.39:5117/api/User/Register?name=&email=&password=');
+  fetch(
+    `${BASE_URL}/api/User/Register?name=${nameValue}&email=${emailValue}&password=${passwordValue}`
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      localStorage.setItem("authToken", data.token);
+      formRegistration.classList.remove("active");
+    });
 }
 
 function getValueByName(arr, property) {
@@ -99,7 +109,6 @@ function validatePassword() {
     confirm_password.setCustomValidity("");
   }
 }
-
 password.onchange = validatePassword;
 confirm_password.onkeyup = validatePassword;
 

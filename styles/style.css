@@ -169,14 +169,13 @@
     align-items: center;
     row-gap: 15px;
     background-color: #fff;
-    min-height: 350px;
     min-width: 300px;
     border-radius: 10px;
     padding: 10px 0 10px 0;
     /* margin-top: 50vh; */
 }
 
-/* .form_registration, */
+.form_registration,
 .form_login {
     display: none;
 }
@@ -235,4 +234,8 @@
     text-decoration: underline;
     text-decoration-color: var(--main-color);
     cursor: pointer;
+}
+
+.active {
+    display: flex;
 }
