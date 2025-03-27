@@ -69,9 +69,39 @@ applicantForm.addEventListener("submit", handleFormSubmit);
 function handleFormSubmit(event) {
   event.preventDefault();
   const formData = objectTransformation(applicantForm);
-  fetch('http://192.168.100.39:5117/api/User/Register?name=&email=&password=');
-  console.log(formData);
+
+  const nameValue = getValueByName(formData, "name");
+  const emailValue = getValueByName(formData, "email");
+  const passwordValue = getValueByName(formData, "password");
+
+  console.log(nameValue);
+  console.log(emailValue);
+  console.log(passwordValue);
+
+  // fetch('http://192.168.100.39:5117/api/User/Register?name=&email=&password=');
 }
+
+function getValueByName(arr, property) {
+  for (const item of arr) {
+    if (item.name === property) {
+      return item.value;
+    }
+  }
+}
+
+const password = document.getElementById("password");
+const confirm_password = document.getElementById("confirm_password");
+
+function validatePassword() {
+  if (password.value != confirm_password.value) {
+    confirm_password.setCustomValidity("Passwords don't match");
+  } else {
+    confirm_password.setCustomValidity("");
+  }
+}
+
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;
 
 function objectTransformation(formNode) {
   const { elements } = formNode;
