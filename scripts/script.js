@@ -56,7 +56,7 @@ function ping(url, successMessage = "success", errorMessage = "error") {
     })
     .catch((err) => {
       showMessage(errorMessage, errorColor);
-      console.log(err);
+      console.error(err);
     });
 }
 
@@ -120,6 +120,5 @@ function objectTransformation(formNode) {
       return { name, value };
     });
 
-  console.log(data);
   return data;
 }
