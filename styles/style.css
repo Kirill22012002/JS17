@@ -62,7 +62,8 @@
 
 .profile_info,
 .profile_posts-title,
-.profile_info-friends-amount {
+.profile_info-friends-amount,
+.profile_post-title {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 400;
     color: #000;
@@ -91,9 +92,6 @@
 .profile_info-friends-count {
     display: flex;
     flex-direction: row;
-    color: var(--text-border-color);
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 400;
     gap: 7px;
     margin-bottom: 20px;
 }
@@ -118,13 +116,6 @@
     border-color: var(--main-color);
     border-radius: 5px;
     padding: 10px;
-}
-
-.profile_post-title {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #000;
-    font-size: 1.2em;
-    font-weight: 400;
 }
 
 .profile_post-text {
