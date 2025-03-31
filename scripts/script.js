@@ -1,10 +1,17 @@
-const BASE_URL = "http://192.168.100.42:5117";
+const BASE_URL = "http://192.168.100.45:5117";
 
 const formRegistration = document.querySelector(".form_registration");
 const formLogin = document.querySelector(".form_login");
+const popupContainer = document.querySelector(".popup-container");
+const popup = document.querySelector("#popup");
+const password = document.getElementById("password");
+const confirmPassword = document.getElementById("confirm_password");
 
 const linkToLogin = formRegistration.querySelector(".link_to-login");
 const linkToRegistration = formLogin.querySelector(".link_to-registration");
+
+password.onchange = validatePassword;
+confirmPassword.onkeyup = validatePassword;
 
 linkToLogin.addEventListener("click", () => {
   toogleActive(formRegistration, formLogin);
@@ -14,23 +21,26 @@ linkToRegistration.addEventListener("click", () => {
   toogleActive(formLogin, formRegistration);
 });
 
-function toogleActive(hide, active) {
-  hide.classList.remove("active");
-  setTimeout(() => {
-    active.classList.add("active");
-  }, 150);
-}
+formRegistration.addEventListener("submit", handleFormSubmit);
 
 ping(
   `${BASE_URL}/api/Ping/PingServer`,
   "Server available",
   "Server not available"
 );
+
 ping(
   `${BASE_URL}/api/Ping/PingSqlServer`,
   "DataBase available",
   "DataBase not available"
 );
+
+function toogleActive(hide, active) {
+  hide.classList.remove("active");
+  setTimeout(() => {
+    active.classList.add("active");
+  }, 150);
+}
 
 function ping(url, successMessage = "success", errorMessage = "error") {
   const successColor = "#6EC531";
@@ -52,40 +62,31 @@ function ping(url, successMessage = "success", errorMessage = "error") {
 
 function showMessage(message, color) {
   const clonedTemplate = document.querySelector("#popup").cloneNode(true);
-  const popup = clonedTemplate.content;
+  const clonedPopup = clonedTemplate.content;
 
-  popup.querySelector(".text").textContent = message;
-  popup.querySelector(".popup").style.backgroundColor = color;
+  clonedPopup.querySelector(".text").textContent = message;
+  clonedPopup.querySelector(".popup").style.backgroundColor = color;
 
-  const popupContainer = document.querySelector(".popup-container");
-  popupContainer.append(popup);
+  popupContainer.append(clonedPopup);
 
   setTimeout(() => {
-    popupContainer.remove(popup);
+    popupContainer.remove(clonedPopup);
   }, 4000);
 }
 
-const applicantForm = document.querySelector(".form_registration");
-applicantForm.addEventListener("submit", handleFormSubmit);
-
 function handleFormSubmit(event) {
   event.preventDefault();
-  const formData = objectTransformation(applicantForm);
+  const formData = objectTransformation(formRegistration);
 
   const nameValue = getValueByName(formData, "name");
   const emailValue = getValueByName(formData, "email");
   const passwordValue = getValueByName(formData, "password");
-
-  console.log(nameValue);
-  console.log(emailValue);
-  console.log(passwordValue);
 
   fetch(
     `${BASE_URL}/api/User/Register?name=${nameValue}&email=${emailValue}&password=${passwordValue}`
   )
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       localStorage.setItem("authToken", data.token);
       formRegistration.classList.remove("active");
     });
@@ -99,18 +100,13 @@ function getValueByName(arr, property) {
   }
 }
 
-const password = document.getElementById("password");
-const confirm_password = document.getElementById("confirm_password");
-
 function validatePassword() {
-  if (password.value != confirm_password.value) {
-    confirm_password.setCustomValidity("Passwords don't match");
+  if (password.value != confirmPassword.value) {
+    confirmPassword.setCustomValidity("Passwords don't match");
   } else {
-    confirm_password.setCustomValidity("");
+    confirmPassword.setCustomValidity("");
   }
 }
-password.onchange = validatePassword;
-confirm_password.onkeyup = validatePassword;
 
 function objectTransformation(formNode) {
   const { elements } = formNode;
