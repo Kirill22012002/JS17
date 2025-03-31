@@ -62,7 +62,7 @@
 
 .profile_info,
 .profile_posts-title,
-.profile_info-friends-amount,
+.profile_info-friends-count-text-block,
 .profile_post-title {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 400;
@@ -96,7 +96,7 @@
     margin-bottom: 20px;
 }
 
-.profile_posts-section {
+.profile_posts {
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -240,7 +240,7 @@
         gap: 10px;
     }
 
-    .profile_information {
+    .profile_info {
         margin-left: 34px;
     }
 
@@ -249,7 +249,7 @@
         margin-top: 10px;
     }
 
-    .profile_posts-section {
+    .profile_posts {
         margin-left: 20px;
     }
 }
