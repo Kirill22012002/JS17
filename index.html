@@ -83,29 +83,42 @@
       </ul>
     </aside>
 
-    <form class="form form_registration">
+    <form class="form form_registration active" id="form">
       <p class="form_title">Registration</p>
       <input
         class="personal_data-input"
         type="text"
+        name="name"
+        required
         placeholder="Enter your name"
       />
       <input
         class="personal_data-input"
         type="email"
+        name="email"
+        required
         placeholder="Enter your email"
       />
       <input
         class="personal_data-input"
         type="password"
+        name="password"
+        id="password"
+        required
         placeholder="Create password"
       />
       <input
         class="personal_data-input"
         type="password"
+        name="password"
+        id="confirm_password"
+        required
         placeholder="Confirm password"
       />
-      <label class="accept"><input type="checkbox" />I accept all terms</label>
+      <label class="accept"
+        ><input type="checkbox" name="checkbox" value="1" />I accept all
+        terms</label
+      >
       <button class="button" type="submit">Register now</button>
       <p>
         Already have an account? <a class="link link_to-login">Login now</a>
