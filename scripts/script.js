@@ -21,7 +21,8 @@ linkToRegistration.addEventListener("click", () => {
   toogleActive(formLogin, formRegistration);
 });
 
-formRegistration.addEventListener("submit", handleFormSubmit);
+formRegistration.addEventListener("submit", handleFormSubmitRegistration);
+formLogin.addEventListener("submit", handleFormSubmitLogin);
 
 ping(
   `${BASE_URL}/api/Ping/PingServer`,
@@ -74,7 +75,7 @@ function showMessage(message, color) {
   }, 4000);
 }
 
-function handleFormSubmit(event) {
+function handleFormSubmitRegistration(event) {
   event.preventDefault();
   const formData = objectTransformation(formRegistration);
 
@@ -121,4 +122,20 @@ function objectTransformation(formNode) {
     });
 
   return data;
+}
+
+function handleFormSubmitLogin(event) {
+  event.preventDefault();
+  const formDataLogin = objectTransformation(formLogin);
+  const emailValueLogin = getValueByName(formDataLogin, "email");
+  const passwordValueLogin = getValueByName(formDataLogin, "password");
+
+  fetch(
+    `${BASE_URL}/api/User/Login?email=${emailValueLogin}&password=${passwordValueLogin}`
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      localStorage.setItem("authToken", data.token);
+      formLogin.classList.remove("active");
+    });
 }
