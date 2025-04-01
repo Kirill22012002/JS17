@@ -15,6 +15,26 @@
     position: relative;
 }
 
+.local_storage-clear {
+    display: flex;
+    font-family: var(--font-family);
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    color: var(--text-border-color);
+    border: 1px solid transparent;
+}
+
+.local_storage-clear:hover {
+    cursor: pointer;
+    color: #000;
+    border: 1px solid #000;
+
+}
+
 .popup-container {
     display: flex;
     font-family: var(--font-family);
