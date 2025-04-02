@@ -1,4 +1,4 @@
-const BASE_URL = "http://192.168.100.45:5117";
+const BASE_URL = "http://192.168.100.47:5117";
 
 const formRegistration = document.querySelector(".form_registration");
 const formLogin = document.querySelector(".form_login");
@@ -10,6 +10,8 @@ const confirmPassword = document.getElementById("confirm_password");
 const linkToLogin = formRegistration.querySelector(".link_to-login");
 const linkToRegistration = formLogin.querySelector(".link_to-registration");
 
+const clearlocalStorage = document.querySelector(".local_storage-clear");
+
 password.onchange = validatePassword;
 confirmPassword.onkeyup = validatePassword;
 
@@ -19,6 +21,10 @@ linkToLogin.addEventListener("click", () => {
 
 linkToRegistration.addEventListener("click", () => {
   toogleActive(formLogin, formRegistration);
+});
+
+clearlocalStorage.addEventListener("click", () => {
+  localStorage.clear();
 });
 
 formRegistration.addEventListener("submit", handleFormSubmitRegistration);
