@@ -71,6 +71,14 @@ img {
     background-image: url(../images/icons/friends.svg);
 }
 
+.profile_info-friends-count-img,
+.sidebar_list-item-my-profile,
+.sidebar_list-item-my-friends,
+.sidebar_list-item-chat,
+.sidebar_list-item-settings {
+    width: 25px;
+}
+
 .profile_info,
 .profile_posts-title,
 .profile_info-friends-count-text-block,
@@ -139,7 +147,7 @@ img {
     width: calc(100vh / 4);
     border-radius: 10px;
     padding: 20px 0 20px 0;
-    display: flex;
+    display: flex;    
 }
 
 .sidebar_list {
@@ -153,7 +161,6 @@ img {
     display: flex;
     flex-direction: row;
     gap: 10px;
-    width: 80%;
     border-radius: 5px;
 }
 
@@ -168,6 +175,22 @@ img {
     font-family: var(--font-family);
     font-size: 1.2em;
     font-weight: 400;
+}
+
+.sidebar_list-item-my-profile {
+    background-image: url(../images/icons/profile.svg);
+}
+
+.sidebar_list-item-my-friends {
+    background-image: url(../images/icons/friends.svg);
+}
+
+.sidebar_list-item-chat {
+    background-image: url(../images/icons/chats.svg);
+}
+
+.sidebar_list-item-settings {
+    background-image: url(../images/icons/settings.svg);
 }
 
 .form {
