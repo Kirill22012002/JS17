@@ -1,4 +1,8 @@
-const BASE_URL = "http://192.168.100.47:5117";
+import "./pages/index.css";
+
+const profileImg = new URL("./images/icons/profile.svg", import.meta.url);
+
+const BASE_URL = "http://192.168.100.49:5117";
 
 const formRegistration = document.querySelector(".form_registration");
 const formLogin = document.querySelector(".form_login");

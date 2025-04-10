@@ -57,7 +57,7 @@
     background-color: #fff;
     border-radius: 10px;
     width: 840px;
-    display: none;
+    display: flex;
     flex-direction: row;
     gap: 40px;
 }
@@ -77,6 +77,25 @@
     margin: 20px 0 20px 0;
     border: #3f70f4 1px solid;
     border-radius: 50%;
+    background-image: url(../images/icons/kroshka.jpg);
+}
+
+img {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.profile_info-friends-count-img {
+    background-image: url(../images/icons/friends.svg);
+}
+
+.profile_info-friends-count-img,
+.sidebar_list-item-my-profile,
+.sidebar_list-item-my-friends,
+.sidebar_list-item-chat,
+.sidebar_list-item-settings {
+    width: 25px;
 }
 
 .profile_info,
@@ -147,7 +166,7 @@
     width: calc(100vh / 4);
     border-radius: 10px;
     padding: 20px 0 20px 0;
-    display: none;
+    display: flex;    
 }
 
 .sidebar_list {
@@ -161,7 +180,6 @@
     display: flex;
     flex-direction: row;
     gap: 10px;
-    width: 80%;
     border-radius: 5px;
 }
 
@@ -176,6 +194,22 @@
     font-family: var(--font-family);
     font-size: 1.2em;
     font-weight: 400;
+}
+
+.sidebar_list-item-my-profile {
+    background-image: url(../images/icons/profile.svg);
+}
+
+.sidebar_list-item-my-friends {
+    background-image: url(../images/icons/friends.svg);
+}
+
+.sidebar_list-item-chat {
+    background-image: url(../images/icons/chats.svg);
+}
+
+.sidebar_list-item-settings {
+    background-image: url(../images/icons/settings.svg);
 }
 
 .form {
@@ -253,7 +287,7 @@
 }
 
 .active {
-    display: flex;
+    display: none;
 }
 
 @media (width: 390px) {
